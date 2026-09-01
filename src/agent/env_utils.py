@@ -8,3 +8,5 @@ load_dotenv(override=True)
 # 从环境变量读取配置
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 DEEPSEEK_API_BASE = os.getenv("DEEPSEEK_API_BASE")
+
+ZHIPU_API_KEY = os.getenv("ZHIPU_API_KEY")
