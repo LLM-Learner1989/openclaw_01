@@ -11,7 +11,7 @@ async def stream_agent_interaction_corrected(agent, thread_id: str) -> AsyncIter
     """
     config = {"configurable": {"thread_id": thread_id}}
 
-    while True:
+    while True: # 多轮对话
         try:
             user_input = input("\n\n[用户] >>> ").strip()
         except (EOFError, KeyboardInterrupt):
@@ -24,7 +24,7 @@ async def stream_agent_interaction_corrected(agent, thread_id: str) -> AsyncIter
         if not user_input:
             continue
 
-        print("\n[Agent] ", end="", flush=True)
+        print("\n[Agent] >>>> ", end="", flush=True)
 
         # 准备输入
         inputs = {"messages": [{"role": "user", "content": user_input}]}
