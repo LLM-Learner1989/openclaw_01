@@ -13,3 +13,5 @@
 3. 需要子 Agent
 
 4. 需要子 skills
+
+绝大多数时候用官方现成的 MemoryBackend / LocalFileBackend 就够了。只有当你需要接入特殊存储、加权限/加密/日志等横切关注点时，才需要自定义 Backend——本质上就是给 DeepAgents 的文件操作套一层你自己的逻辑。
