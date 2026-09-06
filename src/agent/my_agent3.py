@@ -2,7 +2,7 @@ import os
 import sys
 
 from deepagents import create_deep_agent
-from deepagents.backends import FilesystemBackend, LocalShellBackend
+from deepagents.backends import LocalShellBackend
 from langgraph.checkpoint.memory import InMemorySaver
 
 from agent.my_llm import llm

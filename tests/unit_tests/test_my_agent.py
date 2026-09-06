@@ -1,7 +1,7 @@
 import asyncio
 from typing import AsyncIterator
 
-from agent.my_agent3 import agent
+from agent.my_agent4 import agent
 
 
 async def stream_agent_interaction_corrected(agent, thread_id: str) -> AsyncIterator[str]:
