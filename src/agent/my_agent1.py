@@ -1,11 +1,11 @@
+"""
+langgraph dev 模式下自动管理持久化，不需要自定义 checkpointer
+"""
+
 from deepagents import create_deep_agent
 
 from agent.my_llm import llm
 from agent.my_tools import web_search
-
-#from langgraph_runtime_inmem.checkpoint import InMemorySaver
-
-#checkpointer = InMemorySaver() # 没加 checkpointer 就不叫会话
 
 from langgraph.checkpoint.memory import MemorySaver
 checkpointer = MemorySaver()
