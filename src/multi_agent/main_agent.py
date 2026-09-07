@@ -20,7 +20,6 @@ async def load_subagents(config_path: str):
     chart_tools = await mcp_client.get_tools(server_name="fenxi")
 
     available_tools = {
-        # "xsct": xsct_tools,
         "fenxi": chart_tools,
         "web_search": [web_search],
     }
