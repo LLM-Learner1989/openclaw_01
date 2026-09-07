@@ -41,6 +41,7 @@ async def load_subagents(config_path: str):
             print(tools)
             subagent["tools"] = tools[0]
 
+        # 设置拦截器，根据你的需求来，比如限制代码执行次数
         # subagent['middleware'] = ToolCallLimitMiddleware(tool_name="execute_python", run_limit=3) # 限制代码执行最多3次
         subagents.append(subagent)
     return subagents
