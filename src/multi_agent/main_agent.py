@@ -15,10 +15,10 @@ print(f'当前代码执行的工作目录为：{EXAMPLE_DIR}')
 
 async def load_subagents(config_path: str):
     """通过读取配置文件，加载子Agent"""
+
     # 将工具名称映射到实际工具对象
-    # xsct_tools = await mcp_client.get_tools(server_name="xsct")
     chart_tools = await mcp_client.get_tools(server_name="fenxi")
-    # print(xsct_tools)
+
     available_tools = {
         # "xsct": xsct_tools,
         "fenxi": chart_tools,
@@ -48,13 +48,13 @@ async def load_subagents(config_path: str):
 
 
 async def crete():
-    sub_agent = await load_subagents(EXAMPLE_DIR / 'subagents.yaml')
+    sub_agents = await load_subagents(EXAMPLE_DIR / 'subagents.yaml')
     return create_deep_agent(  # create_agent
         model=llm,
         memory=['/AGENTS.md'],  # 由MemoryMiddleware加载, 主Agent的系统提示词
         tools=[web_search],
         backend=FilesystemBackend(root_dir=EXAMPLE_DIR, virtual_mode=True),
-        subagents=sub_agent,
+        subagents=sub_agents,
     )
 
 
