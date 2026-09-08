@@ -35,7 +35,7 @@ def get_or_create_sandbox(config, sandbox_id=None, image=None):
     print(f"[INFO] 正在创建新沙箱，使用镜像: {image}")
     sandbox = SandboxSync.create(
         image,
-        entrypoint=["/opt/opensandbox/code-interpreter.sh"],
+        entrypoint=["/opt/code-interpreter/code-interpreter.sh"],
         env={"PYTHON_VERSION": "3.11"},
         resource={"cpu": "4", "memory": "4Gi"},
         timeout=timedelta(minutes=30),  # 沙箱的空闲超时时间
