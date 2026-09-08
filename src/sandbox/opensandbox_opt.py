@@ -242,10 +242,9 @@ def sync_skills_to_sandbox(backend, local_skills_path, sandbox_skills_path):
     # 返回上传的技能数量
     return uploaded_count
 
-
 # 配置连接
 config = ConnectionConfigSync(
-    domain="http://192.168.23.3:8080",
+    domain="http://172.16.9.130:8080",
     use_server_proxy=True,
     request_timeout=timedelta(seconds=60),
     transport=httpx.HTTPTransport(limits=httpx.Limits(max_connections=20)),
