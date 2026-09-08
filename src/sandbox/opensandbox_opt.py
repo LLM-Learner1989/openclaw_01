@@ -30,7 +30,7 @@ def get_or_create_sandbox(config, sandbox_id=None, image=None):
 
     # 如果没有提供sandbox_id或连接失败，创建新沙箱
     if not image:
-        image = "sandbox-registry.cn-zhangjiakou.cr.aliyuncs.com/opensandbox/code-interpreter:v1.0.2"
+        image = "sandbox-registry.cn-zhangjiakou.cr.aliyuncs.com/opensandbox/code-interpreter:v1.1.0"
 
     print(f"[INFO] 正在创建新沙箱，使用镜像: {image}")
     sandbox = SandboxSync.create(
