@@ -4,7 +4,6 @@ from datetime import timedelta
 import httpx
 from opensandbox import SandboxSync
 from opensandbox.config import ConnectionConfigSync
-from opensandbox.models import NetworkPolicy, NetworkRule
 
 
 def get_or_create_sandbox(config, sandbox_id=None, image=None):
