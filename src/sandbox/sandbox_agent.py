@@ -20,8 +20,6 @@ async def load_subagents(config_path: str):
     # 将工具名称映射到实际工具对象
     chart_tools = await mcp_client.get_tools(server_name="fenxi")
 
-    # print(xsct_tools)
-
     available_tools = {
         "fenxi": chart_tools,
         "web_search": [web_search],
@@ -41,7 +39,6 @@ async def load_subagents(config_path: str):
             subagent["model"] = spec["model"]
         if "tools" in spec:
             tools = [available_tools[t] for t in spec["tools"]]
-            print(tools)
             subagent["tools"] = tools[0]
 
         # subagent['middleware'] = ToolCallLimitMiddleware(tool_name="execute_python", run_limit=3) # 限制代码执行最多3次
