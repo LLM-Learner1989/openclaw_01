@@ -40,7 +40,8 @@ def get_or_create_sandbox(config, sandbox_id=None, image=None):
         resource={"cpu": "4", "memory": "4Gi"},
         timeout=timedelta(minutes=30),  # 沙箱的空闲超时时间
         connection_config=config,
-        ready_timeout=timedelta(seconds=120),
+       # ready_timeout=timedelta(seconds=120),
+       # skip_health_check=True,
         # network_policy=NetworkPolicy(  # 沙箱网络路由限制策略
         #     defaultAction="deny",
         #     egress=[
@@ -246,7 +247,7 @@ def sync_skills_to_sandbox(backend, local_skills_path, sandbox_skills_path):
 # 配置连接
 config = ConnectionConfigSync(
     domain="http://172.16.9.130:8080",
-    use_server_proxy=False,
+    use_server_proxy=True,
     request_timeout=timedelta(seconds=60),
     transport=httpx.HTTPTransport(limits=httpx.Limits(max_connections=20)),
 )
