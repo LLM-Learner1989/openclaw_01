@@ -40,8 +40,8 @@ def get_or_create_sandbox(config, sandbox_id=None, image=None):
         resource={"cpu": "4", "memory": "4Gi"},
         timeout=timedelta(minutes=30),  # 沙箱的空闲超时时间
         connection_config=config,
-       # ready_timeout=timedelta(seconds=120),
-       # skip_health_check=True,
+        ready_timeout=timedelta(seconds=120),
+        skip_health_check=True,
         # network_policy=NetworkPolicy(  # 沙箱网络路由限制策略
         #     defaultAction="deny",
         #     egress=[
